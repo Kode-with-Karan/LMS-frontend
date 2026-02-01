@@ -1,0 +1,157 @@
+.purchase-page {
+  min-height: 100vh;
+  padding: 3.5rem 5vw 5rem;
+  background: var(--student-bg);
+  color: #0f172a;
+}
+
+.purchase-header {
+  margin-bottom: 2.5rem;
+}
+
+.purchase-header h1 {
+  margin: 0.25rem 0;
+  font-size: clamp(2.5rem, 2vw + 1rem, 3rem);
+}
+
+.section-subtitle {
+  margin: 0;
+  color: #475467;
+}
+
+.purchase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.purchase-status,
+.purchase-empty {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.purchase-status--error {
+  color: #dc2626;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.order-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.order-card__date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.status-badge {
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-completed {
+  background: #10b981;
+  color: #fff;
+}
+
+.status-pending {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.status-failed {
+  background: #ef4444;
+  color: #fff;
+}
+
+.order-card__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.order-card__label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.order-card__value {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.order-card__value--amount {
+  font-size: 1.3rem;
+}
+
+.order-card__courses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-card__course {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.order-card__course p {
+  margin: 0;
+}
+
+.btn-invoice {
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  padding: 0.65rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-invoice:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-invoice:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px){
+  .order-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .purchase-page {
+    padding: 2.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,16 @@
+import API from './api'
+
+export const getInstructorDashboard = () => API.get('/instructor/dashboard')
+export const getInstructorCourses = () => API.get('/instructor/courses')
+export const getInstructorCourse = (id) => API.get(`/instructor/courses/${id}`)
+export const createInstructorCourse = (payload) => API.post('/instructor/courses', payload)
+export const updateInstructorCourse = (id, payload) => API.put(`/instructor/courses/${id}`, payload)
+export const updateInstructorCourseStatus = (id, status) => API.patch(`/instructor/courses/${id}/status`, { status })
+export const addSection = (courseId, title) => API.post(`/instructor/courses/${courseId}/sections`, { title })
+export const addLecture = (courseId, sectionIndex, payload) => API.post(`/instructor/courses/${courseId}/sections/${sectionIndex}/lectures`, payload)
+export const updateLecture = (courseId, sectionIndex, lectureId, payload) => API.put(`/instructor/courses/${courseId}/sections/${sectionIndex}/lectures/${lectureId}`, payload)
+export const getStudentsEnrolled = () => API.get('/instructor/students')
+export const getEarnings = () => API.get('/instructor/earnings')
+export const requestWithdrawal = (payload) => API.post('/instructor/withdrawals', payload)
+export const getWithdrawals = () => API.get('/instructor/withdrawals')
+export const updateInstructorProfile = (payload) => API.put('/instructor/profile', payload)

@@ -1,0 +1,150 @@
+.wishlist-page {
+  min-height: 100vh;
+  padding: 3rem 5vw 4rem;
+  background: var(--student-bg);
+  color: #0f172a;
+}
+
+.wishlist-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.wishlist-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 60px rgba(15, 23, 42, 0.12);
+}
+
+.wishlist-card__media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.wishlist-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.wishlist-card__body h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #111c4e;
+}
+
+.wishlist-card__instructor {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #475467;
+}
+
+.wishlist-card__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.wishlist-card__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wishlist-card__price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.wishlist-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.wishlist-card__details {
+  text-decoration: none;
+  font-weight: 600;
+  color: #4f46e5;
+  font-size: 0.9rem;
+}
+
+.btn-remove,
+.btn-enroll {
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-remove {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-enroll {
+  background: linear-gradient(90deg, #10b981, #059669);
+  color: #fff;
+}
+
+.btn-remove:disabled,
+.btn-enroll:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.wishlist-status {
+  margin: 0;
+  font-weight: 600;
+}
+
+.status-error {
+  color: #dc2626;
+}
+
+.status-success {
+  color: #047857;
+}
+
+.wishlist-empty {
+  text-align: center;
+  width: 100%;
+  color: #475467;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px){
+  .wishlist-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

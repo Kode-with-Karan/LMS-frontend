@@ -913,12 +913,36 @@
   }
 
   .dashboard-sidebar{
-    min-height: auto;
+    position: relative;
+    top: 0;
+    max-height: none;
+    width: 100%;
+    order: 1;
+  }
+
+  .dashboard-content{
     order: 2;
   }
 
   .dashboard-main-grid{
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-topbar{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .topbar-actions{
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .topbar-user{
+    width: 100%;
+    justify-content: space-between;
   }
 
   .analytics-grid{
@@ -927,12 +951,17 @@
 }
 
 @media (max-width: 768px){
+  .dashboard-page{
+    padding: 0.85rem;
+  }
+
   .dashboard-content{
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .dashboard-header{
     flex-direction: column;
+    gap: 0.6rem;
   }
 
   .header-actions{
@@ -940,8 +969,26 @@
     justify-content: space-between;
   }
 
+  .dashboard-hero,
+  .dashboard-topbar,
+  .card{
+    padding: 1rem;
+  }
+
+  .dashboard-shell,
+  .dashboard-main-grid,
+  .hero-metrics,
+  .dashboard-stats,
+  .dashboard-panel,
+  .hero-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .topbar-actions{
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 0.6rem;
   }
 }

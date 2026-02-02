@@ -58,17 +58,17 @@ export default function Navbar(){
         <div className="md:hidden border-t border-slate-200 bg-white/95">
             <div className="px-4 py-3 flex flex-col gap-2">
               {links.map((l) => (
-                <Link key={l.to} to={l.to} className="py-2 text-slate-800 font-medium">{l.label}</Link>
+                <Link key={l.to} to={l.to} onClick={()=>setOpen(false)} className="py-2 text-slate-800 font-medium">{l.label}</Link>
               ))}
               {!isAuthenticated ? (
                 <>
-                  <Link to="/login" className="py-2 text-slate-700">Login</Link>
-                  <Link to="/register" className="flex-1 py-2 bg-sky-600 text-white font-semibold rounded text-center">Join for Free</Link>
+                  <Link to="/login" onClick={()=>setOpen(false)} className="py-2 text-slate-700">Login</Link>
+                  <Link to="/register" onClick={()=>setOpen(false)} className="flex-1 py-2 bg-sky-600 text-white font-semibold rounded text-center">Join for Free</Link>
                 </>
               ) : (
                 <>
                   <span className="py-2 text-slate-800">Hi, {user?.name?.split(' ')[0] || 'Learner'}</span>
-                  <button onClick={logout} className="py-2 border border-slate-200 rounded text-slate-800">Logout</button>
+                  <button onClick={()=>{setOpen(false); logout();}} className="py-2 border border-slate-200 rounded text-slate-800">Logout</button>
                 </>
               )}
             </div>

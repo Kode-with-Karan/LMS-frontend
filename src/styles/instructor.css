@@ -29,4 +29,11 @@
 .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700;}
 .badge{display:inline-flex;align-items:center;gap:6px;background:#eef2ff;color:#4f46e5;padding:6px 10px;border-radius:12px;font-weight:700;font-size:12px;}
 .tag{display:inline-flex;padding:6px 8px;border-radius:10px;background:#ecfeff;color:#0ea5e9;font-weight:700;font-size:12px;}
-@media(max-width:960px){.instructor-shell{flex-direction:column;}.instructor-sidebar{width:100%;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;}.instructor-content{padding:16px;}}
+@media(max-width:960px){
+	.instructor-shell{flex-direction:column;}
+	.instructor-sidebar{width:100%;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px;}
+	.instructor-nav{flex-direction:row;flex-wrap:wrap;gap:10px;}
+	.instructor-link{flex:1 1 140px;text-align:center;}
+	.instructor-content{padding:16px;}
+	.instructor-header{flex-direction:column;align-items:flex-start;gap:8px;}
+}

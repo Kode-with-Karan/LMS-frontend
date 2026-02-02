@@ -112,7 +112,7 @@ export default function CourseDetailPage(){
   ] : []
 
   return (
-    <div className="bg-gradient-to-b from-slate-50 to-white min-h-screen">
+    <div className="bg-gradient-to-b from-white via-sky-50 to-white min-h-screen">
       <Navbar />
       {loading ? (
         <div className="max-w-5xl mx-auto px-4 py-12 space-y-6">
@@ -130,39 +130,39 @@ export default function CourseDetailPage(){
       ) : (
         <main className="max-w-6xl mx-auto px-4 py-8 grid gap-8 lg:grid-cols-[3fr_1.15fr]">
           <motion.section initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-indigo-600/90 to-purple-700 shadow-2xl p-8 text-white">
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.4)_0%,_rgba(255,255,255,0)_70%)]" />
+            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-sky-100 via-white to-amber-50 shadow-2xl p-8 text-slate-900 border border-slate-100">
+              <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.18)_0%,_rgba(255,255,255,0)_70%)]" />
               <div className="relative grid gap-6 lg:grid-cols-[3fr_1fr]">
                 <div className="space-y-3">
-                  <p className="text-sm uppercase tracking-wide text-purple-200">{course.category}</p>
-                  <h1 className="text-3xl md:text-4xl font-extrabold">{course.title}</h1>
-                  <p className="text-sm text-indigo-100/80 leading-relaxed">{course.shortDescription}</p>
-                  <div className="flex flex-wrap gap-4 items-center text-sm font-medium mt-3">
-                    <div className="flex items-center gap-2 text-amber-200">
+                  <p className="text-sm uppercase tracking-wide text-sky-700">{course.category}</p>
+                  <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">{course.title}</h1>
+                  <p className="text-sm text-slate-600 leading-relaxed">{course.shortDescription}</p>
+                  <div className="flex flex-wrap gap-4 items-center text-sm font-medium mt-3 text-slate-700">
+                    <div className="flex items-center gap-2 text-amber-600">
                       <span className="text-2xl">⭐</span>
                       <span>{ratingAvg?.toFixed(1)} ({reviews.length})</span>
                     </div>
-                    <span className="text-indigo-100">{course.totalStudents.toLocaleString()} students</span>
-                    <span className="text-indigo-100">Updated {new Date(course.updatedAt).toLocaleDateString()}</span>
+                    <span className="text-slate-700">{course.totalStudents.toLocaleString()} students</span>
+                    <span className="text-slate-700">Updated {new Date(course.updatedAt).toLocaleDateString()}</span>
                   </div>
-                  <div className="flex flex-wrap gap-2 text-xs text-indigo-50">
-                    <span className="px-2 py-1 bg-white/20 rounded-full">{course.level}</span>
-                    <span className="px-2 py-1 bg-white/20 rounded-full">{course.duration?.toFixed(1)}h</span>
-                    <span className="px-2 py-1 bg-white/20 rounded-full">{course.totalLectures} lectures</span>
+                  <div className="flex flex-wrap gap-2 text-xs text-slate-700">
+                    <span className="px-2 py-1 bg-white rounded-full border border-slate-200">{course.level}</span>
+                    <span className="px-2 py-1 bg-white rounded-full border border-slate-200">{course.duration?.toFixed(1)}h</span>
+                    <span className="px-2 py-1 bg-white rounded-full border border-slate-200">{course.totalLectures} lectures</span>
                   </div>
-                  <div className="flex gap-2 text-xs text-purple-100 mt-4">
-                    <span className="rounded-full bg-white/20 px-3 py-1">Lifetime access</span>
-                    <span className="rounded-full bg-white/20 px-3 py-1">Downloadable resources</span>
+                  <div className="flex gap-2 text-xs text-slate-700 mt-4">
+                    <span className="rounded-full bg-white px-3 py-1 border border-slate-200">Lifetime access</span>
+                    <span className="rounded-full bg-white px-3 py-1 border border-slate-200">Downloadable resources</span>
                   </div>
                 </div>
-                <div className="rounded-3xl border border-white/30 bg-white/10 p-4 space-y-4 backdrop-blur">
+                <div className="rounded-3xl border border-slate-200 bg-white p-4 space-y-4 shadow-md">
                   {heroMeta.map(meta=> (
                     <div key={meta.label} className="flex justify-between">
-                      <span className="text-xs uppercase tracking-wide text-white/70">{meta.label}</span>
-                      <span className="text-lg font-bold">{meta.value}</span>
+                      <span className="text-xs uppercase tracking-wide text-slate-500">{meta.label}</span>
+                      <span className="text-lg font-bold text-slate-900">{meta.value}</span>
                     </div>
                   ))}
-                  <button className="w-full rounded-2xl bg-white text-indigo-600 font-semibold py-3">Preview this course</button>
+                  <button className="w-full rounded-2xl bg-sky-600 text-white font-semibold py-3 hover:bg-sky-500 transition">Preview this course</button>
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function CourseDetailPage(){
                   <div className="flex items-center gap-3 text-sm text-slate-500">
                     <span className="px-2 py-1 rounded-full border">Follow</span>
                     <span className="px-2 py-1 rounded-full border">Message</span>
-                    <a className="text-indigo-600 text-sm" href="#">View profile</a>
+                    <a className="text-sky-600 text-sm" href="#">View profile</a>
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function CourseDetailPage(){
                   <div key={star} className="flex items-center gap-3 text-xs">
                     <span>{star}★</span>
                     <div className="flex-1 h-2 bg-slate-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-purple-500 to-indigo-500" style={{ width: `${(ratingCounts[star-1]/breakdownTotal)*100}%` }} />
+                      <div className="h-full bg-gradient-to-r from-sky-400 to-amber-300" style={{ width: `${(ratingCounts[star-1]/breakdownTotal)*100}%` }} />
                     </div>
                     <span className="w-10 text-right">{ratingCounts[star-1]}</span>
                   </div>
@@ -242,7 +242,7 @@ export default function CourseDetailPage(){
                   <label className="text-sm font-medium text-slate-700">Your Rating</label>
                   <div className="flex items-center gap-2 mt-2">
                     {[1,2,3,4,5].map(value=> (
-                      <button type="button" key={value} onClick={()=>setReviewForm(prev=>({ ...prev, rating: value }))} className={`px-3 py-1 border rounded-full ${reviewForm.rating === value ? 'bg-purple-600 text-white' : 'bg-white text-slate-600'}`}>
+                      <button type="button" key={value} onClick={()=>setReviewForm(prev=>({ ...prev, rating: value }))} className={`px-3 py-1 border rounded-full ${reviewForm.rating === value ? 'bg-sky-600 text-white border-sky-600' : 'bg-white text-slate-600'}`}>
                         {value}★
                       </button>
                     ))}
@@ -253,16 +253,16 @@ export default function CourseDetailPage(){
                   <textarea value={reviewForm.comment} onChange={(e)=>setReviewForm(prev=>({ ...prev, comment: e.target.value }))} placeholder="Share what you learned" className="mt-2 w-full border rounded-2xl p-3 text-sm text-slate-700" rows={4} />
                 </div>
                 {reviewFeedback && <p className="text-sm text-emerald-600">{reviewFeedback}</p>}
-                <button type="submit" disabled={submitting} className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-lg hover:scale-[1.01] transition-transform">
+                <button type="submit" disabled={submitting} className="px-6 py-3 rounded-2xl bg-gradient-to-r from-sky-600 to-sky-500 text-white font-semibold shadow-lg hover:scale-[1.01] transition-transform">
                   {submitting ? 'Submitting...' : 'Post Review'}
                 </button>
               </form>
             </motion.div>
 
-            <motion.div className="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-3xl p-6 text-white shadow-2xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <motion.div className="bg-gradient-to-r from-sky-500 to-amber-300 rounded-3xl p-6 text-slate-900 shadow-2xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               <h3 className="text-xl font-semibold">Ready to start?</h3>
-              <p className="text-sm mt-2">Continue where you left off and build real projects with SkillSphere.</p>
-              <button onClick={handlePurchase} className="mt-4 px-6 py-3 rounded-2xl bg-white text-purple-700 font-semibold shadow-lg hover:scale-[1.01] transition-transform">{enrolled ? 'Go to course' : 'Buy now'}</button>
+              <p className="text-sm mt-2 text-slate-800">Continue where you left off and build real projects with SkillSphere.</p>
+              <button onClick={handlePurchase} className="mt-4 px-6 py-3 rounded-2xl bg-white text-sky-700 font-semibold shadow-lg hover:scale-[1.01] transition-transform">{enrolled ? 'Go to course' : 'Buy now'}</button>
             </motion.div>
           </motion.section>
 

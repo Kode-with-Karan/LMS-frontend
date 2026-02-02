@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600&display=swap');
 
 .contact-page{
   min-height: 100vh;
-  background: #F9FAFB;
-  font-family: 'Poppins', system-ui, sans-serif;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 55%, #e7eef8 100%);
+  font-family: 'Inter', system-ui, sans-serif;
   color: #0f172a;
 }
 
 .contact-hero{
-  background: linear-gradient(120deg, #5B21B6, #9333EA);
-  color: #f8fbff;
+  background: linear-gradient(135deg, #e0f2fe, #fef9c3);
+  color: #0f172a;
   padding: 4rem clamp(1.5rem, 3vw, 4rem);
   border-radius: 32px;
   margin: 2rem auto 1.5rem;
   max-width: 1100px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
 }
 
 .contact-hero__glow{
@@ -24,10 +24,10 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.6), transparent 60%);
+  background: radial-gradient(circle, rgba(14,165,233, 0.25), transparent 60%);
   top: 10%;
   right: 5%;
-  filter: blur(15px);
+  filter: blur(25px);
   animation: drift 7s ease-in-out infinite;
 }
 
@@ -43,7 +43,7 @@
 
 .contact-hero p{
   margin-top: 0.75rem;
-  color: rgba(248, 251, 255, 0.9);
+  color: #334155;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -52,18 +52,19 @@
   margin-top: 2rem;
   padding: 0.95rem 1.8rem;
   border-radius: 999px;
-  border: none;
+  border: 1px solid rgba(14,165,233,0.25);
   font-size: 1rem;
-  font-weight: 600;
-  color: #5B21B6;
-  background: #fef3c7;
+  font-weight: 700;
+  color: #fff;
+  background: #0ea5e9;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(14,165,233,0.28);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-hero__cta:hover{
   transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 14px 32px rgba(14,165,233,0.25);
 }
 
 .contact-info{
@@ -79,16 +80,16 @@
   background: #fff;
   border-radius: 20px;
   padding: 1.5rem;
-  border: 1px solid rgba(15,23,42,0.08);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(14,165,233,0.12);
+  box-shadow: 0 15px 35px rgba(14, 165, 233, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-icon{
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(91, 33, 182, 0.1);
+  background: rgba(14,165,233, 0.1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -119,11 +120,11 @@
 }
 
 .contact-form-wrapper{
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border-radius: 24px;
   padding: 2rem;
-  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15);
-  border: 1px solid rgba(249, 250, 251, 0.8);
+  box-shadow: 0 25px 50px rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14,165,233,0.1);
 }
 
 .contact-form{
@@ -135,7 +136,7 @@
 .contact-form input,
 .contact-form textarea{
   border-radius: 14px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
   font-family: inherit;
@@ -145,8 +146,8 @@
 .contact-form input:focus,
 .contact-form textarea:focus{
   outline: none;
-  border-color: #5B21B6;
-  box-shadow: 0 0 0 3px rgba(91, 33, 182, 0.2);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
 }
 
 .contact-form__actions{
@@ -156,15 +157,15 @@
 }
 
 .contact-form__submit{
-  background: linear-gradient(120deg, #5B21B6, #9333EA);
+  background: linear-gradient(120deg, #0ea5e9, #38bdf8);
   border: none;
   color: #fff;
   padding: 0.95rem 1.5rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 15px 30px rgba(91, 33, 182, 0.4);
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -180,7 +181,7 @@
   width: 20px;
   height: 20px;
   border: 3px solid rgba(255,255,255,0.6);
-  border-top-color: #fde68a;
+  border-top-color: #0ea5e9;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -197,8 +198,8 @@
 .contact-map{
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(15,23,42,0.1);
-  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(14,165,233,0.12);
+  box-shadow: 0 25px 45px rgba(14, 165, 233, 0.15);
 }
 
 .contact-map iframe{

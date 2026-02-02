@@ -71,15 +71,16 @@ export default function CoursesPage(){
   const onClearFilters = ()=>{ setFilters({ categories:[], minPrice:'', maxPrice:'', rating:'', level:'', duration:''}); setPage(1) }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-sky-50 to-white">
       <Navbar />
-      <header className="py-8">
+      <header className="py-10">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl font-bold text-emerald-900">Explore Courses</h1>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">Browse library</p>
+          <h1 className="text-3xl font-bold text-slate-900">Explore courses</h1>
           <p className="text-slate-600 mt-1">Upgrade your skills with top-rated courses</p>
           <div className="mt-4">
-            <div className="max-w-2xl mx-auto">
-              <input value={query} onChange={(e)=>{ setQuery(e.target.value); setPage(1)}} placeholder="Search courses or instructors" className="w-full p-3 rounded-lg shadow-sm border bg-white" />
+            <div className="max-w-2xl">
+              <input value={query} onChange={(e)=>{ setQuery(e.target.value); setPage(1)}} placeholder="Search courses or instructors" className="w-full p-3 rounded-xl shadow-sm border border-slate-200 bg-white text-slate-800" />
             </div>
           </div>
         </div>
@@ -96,7 +97,7 @@ export default function CoursesPage(){
             <div className="text-sm text-slate-600">Showing {(coursesData.courses||[]).length? `${(page-1)*size+1}–${Math.min(page*size, coursesData.totalElements)}` : '0'} of {coursesData.totalElements} results</div>
             <div className="flex items-center gap-3">
               <label className="text-sm text-slate-600">Sort:</label>
-              <select value={sort} onChange={(e)=>{ setSort(e.target.value); setPage(1)}} className="p-2 border rounded">
+              <select value={sort} onChange={(e)=>{ setSort(e.target.value); setPage(1)}} className="p-2 border border-slate-200 rounded-lg bg-white text-slate-700">
                 <option value="popular">Most Popular</option>
                 <option value="highest">Highest Rated</option>
                 <option value="newest">Newest</option>

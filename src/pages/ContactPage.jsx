@@ -34,7 +34,7 @@ export default function ContactPage(){
           {infoCards.map((card) => (
             <article key={card.label} className="contact-info-card">
               <div className="feature-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#5B21B6" xmlns="http://www.w3.org/2000/svg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0ea5e9" xmlns="http://www.w3.org/2000/svg">
                   <path d={card.icon} />
                 </svg>
               </div>

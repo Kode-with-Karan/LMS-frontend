@@ -22,53 +22,53 @@ export default function Navbar(){
 
   const initials = (user?.name || '').split(' ').map(n=>n[0]).slice(0,2).join('').toUpperCase() || 'U'
   return (
-    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/85 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center gap-6">
-            <Link to="/" className="text-2xl font-bold text-indigo-600">SkillSphere</Link>
-            <div className="hidden md:flex items-center gap-6">
+            <Link to="/" className="text-2xl font-extrabold text-sky-600 tracking-tight">SkillSphere</Link>
+            <div className="hidden md:flex items-center gap-4">
               {links.map((l) => (
-                <Link key={l.to} to={l.to} className="text-slate-700 hover:text-indigo-600 font-medium">{l.label}</Link>
+                <Link key={l.to} to={l.to} className="text-sm font-semibold text-slate-700 hover:text-sky-600 px-3 py-2 rounded-lg hover:bg-slate-100 transition">{l.label}</Link>
               ))}
             </div>
           </div>
           <div className="hidden md:flex items-center gap-3">
             {!isAuthenticated ? (
               <>
-                <Link to="/login" className="px-4 py-2 font-medium text-slate-700 hover:text-white hover:bg-indigo-600 rounded-md transition border border-transparent hover:border-indigo-600">Login</Link>
-                <Link to="/register" className="px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:scale-105 transform transition">Sign Up</Link>
+                <Link to="/login" className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-sky-700 rounded-lg border border-slate-200 hover:border-sky-400 transition">Login</Link>
+                <Link to="/register" className="px-4 py-2 text-sm font-semibold text-white bg-sky-600 rounded-lg shadow-sm hover:bg-sky-500 transition">Join for Free</Link>
               </>
             ) : (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,#a855f7,#6366f1)', color: '#fff', display: 'grid', placeItems: 'center', fontWeight: 800 }}>{initials}</div>
-                <span className="text-sm text-slate-900">Hi, {user?.name?.split(' ')[0] || 'Learner'}</span>
-                <button onClick={logout} className="px-4 py-2 bg-slate-100 text-slate-700 rounded-md hover:bg-slate-200 transition">Logout</button>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-amber-300 text-slate-900 grid place-items-center font-extrabold">{initials}</div>
+                <span className="text-sm text-slate-800">Hi, {user?.name?.split(' ')[0] || 'Learner'}</span>
+                <button onClick={logout} className="px-4 py-2 text-sm font-semibold text-slate-700 bg-slate-100 rounded-lg border border-slate-200 hover:border-sky-300 transition">Logout</button>
               </div>
             )}
           </div>
           <div className="md:hidden">
-            <button onClick={()=>setOpen(!open)} className="p-2 rounded-md border">
+            <button onClick={()=>setOpen(!open)} className="p-2 rounded-md border border-slate-200 text-slate-700 bg-white/90">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open?"M6 18L18 6M6 6l12 12":"M4 6h16M4 12h16M4 18h16"} /></svg>
             </button>
           </div>
         </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-slate-200 bg-white/90">
+        <div className="md:hidden border-t border-slate-200 bg-white/95">
             <div className="px-4 py-3 flex flex-col gap-2">
               {links.map((l) => (
-                <Link key={l.to} to={l.to} className="py-2">{l.label}</Link>
+                <Link key={l.to} to={l.to} className="py-2 text-slate-800 font-medium">{l.label}</Link>
               ))}
               {!isAuthenticated ? (
                 <>
-                  <Link to="/login" className="py-2">Login</Link>
-                  <Link to="/register" className="flex-1 py-2 bg-indigo-600 text-white rounded text-center">Sign Up</Link>
+                  <Link to="/login" className="py-2 text-slate-700">Login</Link>
+                  <Link to="/register" className="flex-1 py-2 bg-sky-600 text-white font-semibold rounded text-center">Join for Free</Link>
                 </>
               ) : (
                 <>
-                  <span className="py-2">Hi, {user?.name?.split(' ')[0] || 'Learner'}</span>
-                  <button onClick={logout} className="py-2 border rounded">Logout</button>
+                  <span className="py-2 text-slate-800">Hi, {user?.name?.split(' ')[0] || 'Learner'}</span>
+                  <button onClick={logout} className="py-2 border border-slate-200 rounded text-slate-800">Logout</button>
                 </>
               )}
             </div>

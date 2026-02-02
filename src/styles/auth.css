@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600&display=swap');
 
 .auth-layout{
   min-height: 100vh;
-  background: #F3F4F6;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 55%, #e7eef8 100%);
   display: flex;
   align-items: stretch;
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .auth-split{
@@ -21,21 +21,23 @@
 }
 
 .auth-hero{
-  background: linear-gradient(135deg, #5B21B6, #9333EA);
-  color: #fff;
+  background: linear-gradient(135deg, #e0f2fe, #fef9c3);
+  color: #0f172a;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  border-radius: 24px;
+  box-shadow: 0 25px 45px rgba(14,165,233,0.12);
 }
 
 .auth-hero::after{
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 60%);
-  opacity: 0.6;
+  background: radial-gradient(circle at 20% 20%, rgba(14,165,233,0.18), transparent 50%), radial-gradient(circle at 80% 0%, rgba(245,158,11,0.16), transparent 45%);
+  opacity: 0.8;
 }
 
 .auth-hero__content{
@@ -46,7 +48,7 @@
 .auth-form-panel{
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(14,165,233,0.12);
   margin: auto;
   max-width: 520px;
   width: 100%;
@@ -74,7 +76,7 @@
 .auth-field select,
 .auth-field textarea{
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.6);
   padding: 1rem 1.2rem;
   font-family: inherit;
   font-size: 1rem;
@@ -85,8 +87,8 @@
 .auth-field select:focus,
 .auth-field textarea:focus{
   outline: none;
-  border-color: #5B21B6;
-  box-shadow: 0 0 0 3px rgba(91, 33, 182, 0.2);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
 }
 
 .auth-field label{
@@ -110,12 +112,12 @@
   border-radius: 999px;
   padding: 0.9rem 1.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
-  background: linear-gradient(120deg, #5B21B6, #9333EA);
-  box-shadow: 0 15px 30px rgba(91, 33, 182, 0.4);
+  background: linear-gradient(120deg, #0ea5e9, #38bdf8);
+  box-shadow: 0 15px 30px rgba(14,165,233,0.35);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .auth-button:hover{
@@ -124,7 +126,7 @@
 
 .auth-link{
   font-size: 0.9rem;
-  color: #5B21B6;
+  color: #0ea5e9;
   text-decoration: none;
 }
 
@@ -163,7 +165,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #5B21B6;
+  color: #0ea5e9;
 }
 
 .auth-note{
